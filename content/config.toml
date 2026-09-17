@@ -1,0 +1,57 @@
+[site]
+title = "Razib — Academic portfolio"
+description = "Academic portfolio for research, publications, teaching, and related materials."
+favicon = "/favicon.svg"
+last_updated = "September 2026"
+
+[author]
+name = "Razib"
+title = "Researcher and engineer"
+institution = ""
+avatar = ""
+email = ""
+
+[social]
+google_scholar = ""
+orcid = ""
+github = ""
+linkedin = ""
+
+[features]
+enable_one_page_mode = false
+
+[[navigation]]
+title = "About"
+type = "page"
+target = "about"
+href = "/"
+
+[[navigation]]
+title = "Publications"
+type = "page"
+target = "publications"
+href = "/publications/"
+
+[[navigation]]
+title = "Teaching"
+type = "page"
+target = "teaching"
+href = "/teaching/"
+
+[[navigation]]
+title = "Services"
+type = "page"
+target = "services"
+href = "/services/"
+
+[[navigation]]
+title = "Materials"
+type = "page"
+target = "materials"
+href = "/materials/"
+
+[[navigation]]
+title = "Blog"
+type = "page"
+target = "blog"
+href = "/blog/"
