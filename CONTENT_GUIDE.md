@@ -18,7 +18,6 @@ The academic portfolio is a statically generated Next.js site deployed at `/acad
 | Academic project | `content/projects/<slug>.md` | `/academic/projects/`, category filters, stack and repository links |
 | Experience entry | `content/experience/<slug>.md` | `/academic/experience/`, grouped by `category` |
 | Education entry | `content/education/<slug>.md` | `/academic/education/`, period, degree, logo, and GPA |
-| Honor or award | `content/awards/<slug>.md` | `/academic/awards/`, grouped by `category` |
 | CV page/embed | `content/pages/cv.md` | `/academic/cv/`, optional external embed and local download |
 | Teaching and service page text | `content/pages/teaching.md`, `services.md` | `/academic/teaching/`, `/academic/services/` |
 | Additional Markdown page | `content/pages/<slug>.md` | `/academic/<slug>/` |
@@ -26,7 +25,7 @@ The academic portfolio is a statically generated Next.js site deployed at `/acad
 
 Delete the corresponding content file to remove an item on the next build. Set `published: false` to keep a blog or news file validated but hidden.
 
-The v2.0 presentation is implemented by the application, but its displayed material is still file-based. Projects, experience, education, awards, blog posts, news, and publications can be added or removed without editing React components. The source v2.0 repository referenced blog images, publication thumbnails, transcripts, and a local CV PDF that were not present in that repository; those missing targets were not copied as broken links.
+The v2.0 presentation is implemented by the application, but its displayed material is still file-based. Projects, experience, education, blog posts, news, and publications can be added or removed without editing React components. The source v2.0 repository referenced blog images, publication thumbnails, transcripts, and a local CV PDF that were not present in that repository; those missing targets were not copied as broken links.
 
 ## Markdown files
 

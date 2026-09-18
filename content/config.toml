@@ -1,5 +1,5 @@
 [site]
-title = "Rajib Dab | CS Undergrad"
+title = "Rajib Dab/ রাজিব দেব"
 description = "Academic portfolio of Rajib Dab, a computer science undergraduate at Metropolitan University Bangladesh."
 favicon = "/assets/icons/favicon.ico"
 last_updated = "August 2024"
@@ -9,7 +9,7 @@ name = "Rajib Dab"
 title = "CS Undergrad"
 department = "Department of Computer Science & Engineering"
 institution = "Metropolitan University Bangladesh"
-avatar = "/images/rajib_dab.jpg"
+avatar = "/images/headshot.png"
 email_display = "razibdev7(at)gmail(dot)com"
 location = "Sylhet, Bangladesh"
 
@@ -65,9 +65,3 @@ title = "Education"
 type = "page"
 target = "education"
 href = "/education/"
-
-[[navigation]]
-title = "Honors & Awards"
-type = "page"
-target = "awards"
-href = "/awards/"

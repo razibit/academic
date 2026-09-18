@@ -83,13 +83,6 @@ export interface EducationMeta extends ContentMeta {
   transcript?: string;
 }
 
-export interface AwardMeta extends ContentMeta {
-  title: string;
-  category?: string;
-  organization?: string;
-  date?: string;
-}
-
 export interface CvMeta extends ContentMeta {
   title: string;
   embed_url?: string;
