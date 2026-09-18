@@ -48,6 +48,7 @@ ul { margin-top:0; }
 .academic-nav nav a:hover,.academic-nav nav a.active { color:var(--hover); }
 .academic-nav nav a:hover::after,.academic-nav nav a.active::after { width:100%; }
 .theme-button { display:grid; place-items:center; width:2.25rem; height:2.25rem; padding:0; color:var(--link); border:1px solid var(--border); border-radius:50%; background:var(--bg); cursor:pointer; }
+.theme-button[data-theme-state='light'] { color:#3d6f9f; }
 .theme-button[data-theme-state='dark'] { color:#f4b740; }
 .theme-icon { width:1.15rem; height:1.15rem; display:block; }
 .theme-button:hover { background:var(--tag); }

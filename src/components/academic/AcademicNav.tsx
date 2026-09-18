@@ -41,8 +41,8 @@ export default function AcademicNav({ items, title }: { items: NavigationItem[];
         })}
       </nav>
       <button className="theme-button" type="button" onClick={toggle} aria-label={dark ? "Switch to light mode" : "Switch to dark mode"} aria-pressed={dark} data-theme-state={dark ? "dark" : "light"}>
-        <svg className="theme-icon" viewBox="0 0 24 24" aria-hidden="true">
-          {dark ? <><circle cx="12" cy="12" r="4" fill="currentColor" /><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.8" /></> : <path d="M20.8 15.4A8.5 8.5 0 0 1 8.6 3.2 8.5 8.5 0 1 0 20.8 15.4Z" fill="currentColor" />}
+        <svg className="theme-icon" viewBox={dark ? "0 0 24 24" : "0 0 20 20"} aria-hidden="true">
+          {dark ? <><circle cx="12" cy="12" r="4" fill="currentColor" /><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.8" /></> : <path fill="currentColor" fillRule="evenodd" d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" clipRule="evenodd" />}
         </svg>
       </button>
     </div>
