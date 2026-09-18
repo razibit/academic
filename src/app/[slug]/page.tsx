@@ -7,7 +7,7 @@ type RouteProps = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
   const pages = getPages()
-    .filter((page) => !["about", "services", "teaching"].includes(page.slug))
+    .filter((page) => !["about", "services", "teaching", "cv"].includes(page.slug))
     .map((page) => ({ slug: page.slug }));
   return pages.length ? pages : [{ slug: "__empty__" }];
 }
@@ -31,7 +31,7 @@ export default async function AcademicContentPage({ params }: RouteProps) {
   if (!page) notFound();
 
   return (
-    <main className="academic-article">
+    <main className="main-content academic-article">
       <Link href={internalRoute("/")}>← Home</Link>
       <h1>{String(page.meta.title ?? page.slug)}</h1>
       {typeof page.meta.description === "string" && <p className="page-description">{page.meta.description}</p>}

@@ -8,18 +8,25 @@ The academic portfolio is a statically generated Next.js site deployed at `/acad
 | --- | --- | --- |
 | Profile, links, navigation, site identity | `content/config.toml` | Header, profile card, metadata, navigation |
 | Biography | `content/bio.md` | Homepage About section |
-| Research interests | `content/about.toml` | Homepage research-interest box |
+| Research interests and spotlight | `content/about.toml` | Profile sidebar research and Spotlight sections |
 | Publication | `content/publications.bib` | `/academic/publications/` and selected homepage cards |
 | Publication source selection | `content/publications.toml` | Chooses the BibTeX file below `content/` |
 | Blog post | `content/posts/YYYY-MM-DD-<slug>.md` | `/academic/blog/` and dated detail route |
 | News item | `content/news/YYYY-MM-DD-<slug>.md` | Homepage News section |
 | Material/resource | `content/materials/<slug>.md` | `/academic/materials/` |
 | Teaching item | `content/teaching/<slug>.md` | Teaching materials cards |
+| Academic project | `content/projects/<slug>.md` | `/academic/projects/`, category filters, stack and repository links |
+| Experience entry | `content/experience/<slug>.md` | `/academic/experience/`, grouped by `category` |
+| Education entry | `content/education/<slug>.md` | `/academic/education/`, period, degree, logo, and GPA |
+| Honor or award | `content/awards/<slug>.md` | `/academic/awards/`, grouped by `category` |
+| CV page/embed | `content/pages/cv.md` | `/academic/cv/`, optional external embed and local download |
 | Teaching and service page text | `content/pages/teaching.md`, `services.md` | `/academic/teaching/`, `/academic/services/` |
 | Additional Markdown page | `content/pages/<slug>.md` | `/academic/<slug>/` |
 | Skills | `content/skills.toml` | Shared content surface for future academic skill sections |
 
 Delete the corresponding content file to remove an item on the next build. Set `published: false` to keep a blog or news file validated but hidden.
+
+The v2.0 presentation is implemented by the application, but its displayed material is still file-based. Projects, experience, education, awards, blog posts, news, and publications can be added or removed without editing React components. The source v2.0 repository referenced blog images, publication thumbnails, transcripts, and a local CV PDF that were not present in that repository; those missing targets were not copied as broken links.
 
 ## Markdown files
 
@@ -78,6 +85,7 @@ The author name from `config.toml` is highlighted in author lists. Use an asteri
 ```toml
 [profile]
 research_interests = ["Verified research area"]
+spotlight = ["Short Markdown-compatible highlight shown in the profile sidebar."]
 ```
 
 ## Validation and local build
@@ -93,4 +101,3 @@ npm run build
 Validation reports file/field errors for front matter, TOML, BibTeX, duplicate slugs/keys, invalid publication fields, and missing local images/PDFs/posters/slides/downloads. The static output is written to `out/`; generated URLs and assets include `/academic`. GitHub Actions runs validation and the build with Node.js 22 before deployment.
 
 The preserved `JiayiGeng.github.io/` directory is local reference material only. It is ignored by this repository, is not imported by the application, and is not included in the generated output.
-

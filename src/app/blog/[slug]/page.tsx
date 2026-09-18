@@ -24,7 +24,7 @@ export default async function AcademicBlogPost({ params }: RouteProps) {
   if (!post) notFound();
 
   return (
-    <main className="academic-article">
+    <main className="main-content academic-article">
       <Link href={internalRoute("/blog/")}>← All posts</Link>
       <p className="eyebrow">{post.meta.date}</p>
       <h1>{post.meta.title}</h1>

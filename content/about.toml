@@ -1,5 +1,7 @@
-type = "about"
-title = "About"
-
 [profile]
-research_interests = []
+research_interests = ["Computer Vision", "Natural Language Processing"]
+
+spotlight = [
+  "Started working on AI Financial Advisor [SenFAI](/projects/senfai/).",
+  "I will be presenting my project on Kaggle AI competition this September."
+]

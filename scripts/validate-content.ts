@@ -183,7 +183,7 @@ try {
     targets.add(target);
   }
 
-  for (const directory of ["pages", "posts", "news", "projects", "experience", "materials"]) {
+  for (const directory of ["pages", "posts", "news", "projects", "experience", "materials", "education", "awards"]) {
     if (!fs.existsSync(path.join(contentRoot, directory))) errors.push(`Missing content directory: ${path.join(contentRoot, directory)}`);
   }
 
@@ -209,9 +209,11 @@ try {
 
   checkDocs("posts", getCollection("posts"), z.object({ title, date, ...optionalFields }).passthrough());
   checkDocs("news", getCollection("news"), z.object({ title: title.optional(), date, ...optionalFields }).passthrough());
-  checkDocs("projects", getProjects(), z.object({ title, role: z.string().optional(), contribution: z.string().optional(), stack: z.union([z.string(), z.array(z.string())]).optional(), outcome: z.string().optional(), ...optionalFields }).passthrough());
-  checkDocs("experience", getExperience(), z.object({ title, dates: z.string().optional(), summary: z.string().optional(), ...optionalFields }).passthrough());
+  checkDocs("projects", getProjects(), z.object({ title, role: z.string().optional(), category: z.string().optional(), contribution: z.string().optional(), stack: z.union([z.string(), z.array(z.string())]).optional(), outcome: z.string().optional(), ...optionalFields }).passthrough());
+  checkDocs("experience", getExperience(), z.object({ title, dates: z.string().optional(), summary: z.string().optional(), company: z.string().optional(), organization: z.string().optional(), position: z.string().optional(), category: z.string().optional(), ...optionalFields }).passthrough());
   checkDocs("materials", getMaterials(), z.object({ title, type: z.string().optional(), date: date.optional(), ...optionalFields }).passthrough());
+  checkDocs("education", getCollection("education"), z.object({ title, period: z.string().optional(), degree: z.string().optional(), gpa: z.string().optional(), logo: z.string().optional(), transcript: z.string().optional(), ...optionalFields }).passthrough());
+  checkDocs("awards", getCollection("awards"), z.object({ title, category: z.string().optional(), organization: z.string().optional(), date: z.string().optional(), ...optionalFields }).passthrough());
   checkDocs("pages", getPages(), z.object({ title, ...optionalFields }).passthrough());
 
   const teachingDirectory = path.join(contentRoot, "teaching");

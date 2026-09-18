@@ -1,6 +1,6 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { publicAssetUrl } from "./routes";
+import { publicAssetUrl, routeUrl } from "./routes";
 
 export function Markdown({ content, className = "markdown" }: { content: string; className?: string }) {
   return (
@@ -8,12 +8,12 @@ export function Markdown({ content, className = "markdown" }: { content: string;
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
-          a: ({ href, children, ...props }) => (
-            <a href={href} {...props} target={href?.startsWith("/") ? undefined : "_blank"} rel={href?.startsWith("/") ? undefined : "noreferrer"}>
+          a: ({ href, children, title }) => (
+            <a href={href?.startsWith("/") ? routeUrl(href) : href} title={title} target={href?.startsWith("/") ? undefined : "_blank"} rel={href?.startsWith("/") ? undefined : "noreferrer"}>
               {children}
             </a>
           ),
-          img: ({ src, alt, ...props }) => <img src={typeof src === "string" ? publicAssetUrl(src) : undefined} alt={alt ?? ""} {...props} />,
+          img: ({ src, alt, title }) => <img src={typeof src === "string" ? publicAssetUrl(src) : undefined} alt={alt ?? ""} title={title} />,
         }}
       >
         {content}
@@ -21,5 +21,3 @@ export function Markdown({ content, className = "markdown" }: { content: string;
     </div>
   );
 }
-
-

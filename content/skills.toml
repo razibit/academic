@@ -1,9 +1,9 @@
-note = "Academic and technical skills will be added after verification."
+note = "Computer vision and natural language processing are the current research interests represented in this portfolio."
 
 [[groups]]
-name = "Research"
-items = []
+name = "Research interests"
+items = ["Computer Vision", "Natural Language Processing"]
 
 [[groups]]
-name = "Engineering"
-items = []
+name = "Technical interests"
+items = ["Python", "TensorFlow", "PyTorch", "React", "IoT"]

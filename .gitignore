@@ -4,4 +4,6 @@
 *.tsbuildinfo
 next-env.d.ts
 /.vercel/
+/output/
+/.playwright-cli/
 /JiayiGeng.github.io/

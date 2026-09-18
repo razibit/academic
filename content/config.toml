@@ -1,30 +1,40 @@
 [site]
-title = "Razib — Academic portfolio"
-description = "Academic portfolio for research, publications, teaching, and related materials."
-favicon = "/favicon.svg"
-last_updated = "September 2026"
+title = "Rajib Dab | CS Undergrad"
+description = "Academic portfolio of Rajib Dab, a computer science undergraduate at Metropolitan University Bangladesh."
+favicon = "/assets/icons/favicon.ico"
+last_updated = "August 2024"
 
 [author]
-name = "Razib"
-title = "Researcher and engineer"
-institution = ""
-avatar = ""
-email = ""
+name = "Rajib Dab"
+title = "CS Undergrad"
+department = "Department of Computer Science & Engineering"
+institution = "Metropolitan University Bangladesh"
+avatar = "/images/rajib_dab.jpg"
+email_display = "razibdev7(at)gmail(dot)com"
+location = "Sylhet, Bangladesh"
 
 [social]
-google_scholar = ""
-orcid = ""
-github = ""
-linkedin = ""
+linkedin = "https://linkedin.com/in/rajibdab"
+x = "https://x.com/ups01v3"
+github = "https://github.com/razibit"
+researchgate = "https://www.researchgate.net/profile/Rajib-Dab"
+orcid = "https://orcid.org/0009-0003-9057-1711"
+dblp = ""
 
 [features]
 enable_one_page_mode = false
 
 [[navigation]]
-title = "About"
+title = "Home"
 type = "page"
-target = "about"
+target = "home"
 href = "/"
+
+[[navigation]]
+title = "Projects"
+type = "page"
+target = "projects"
+href = "/projects/"
 
 [[navigation]]
 title = "Publications"
@@ -33,25 +43,31 @@ target = "publications"
 href = "/publications/"
 
 [[navigation]]
-title = "Teaching"
-type = "page"
-target = "teaching"
-href = "/teaching/"
-
-[[navigation]]
-title = "Services"
-type = "page"
-target = "services"
-href = "/services/"
-
-[[navigation]]
-title = "Materials"
-type = "page"
-target = "materials"
-href = "/materials/"
-
-[[navigation]]
 title = "Blog"
 type = "page"
 target = "blog"
 href = "/blog/"
+
+[[navigation]]
+title = "CV"
+type = "page"
+target = "cv"
+href = "/cv/"
+
+[[navigation]]
+title = "Experience"
+type = "page"
+target = "experience"
+href = "/experience/"
+
+[[navigation]]
+title = "Education"
+type = "page"
+target = "education"
+href = "/education/"
+
+[[navigation]]
+title = "Honors & Awards"
+type = "page"
+target = "awards"
+href = "/awards/"

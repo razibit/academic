@@ -8,4 +8,10 @@ export interface SkillsContent {
   note?: string;
 }
 
-
+export interface AcademicAbout {
+  profile?: {
+    research_interests?: string[];
+    spotlight?: string[];
+  };
+  spotlight?: string[];
+}

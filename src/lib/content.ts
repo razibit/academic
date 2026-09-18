@@ -32,10 +32,13 @@ export interface SiteConfig {
     name: string;
     title: string;
     institution?: string;
+    department?: string;
     avatar?: string;
     introduction?: string;
     positioning?: string;
     email?: string;
+    email_display?: string;
+    location?: string;
     resume_url?: string;
   };
   social?: Record<string, string | undefined>;
@@ -47,9 +50,11 @@ export interface ProjectMeta extends ContentMeta {
   title: string;
   label?: string;
   summary?: string;
+  category?: string;
   role?: string;
   contribution?: string;
   stack?: string | string[];
+  tags?: string[];
   outcome?: string;
   image?: string;
   link?: string;
@@ -61,9 +66,34 @@ export interface ProjectMeta extends ContentMeta {
 export interface ExperienceMeta extends ContentMeta {
   title: string;
   company?: string;
+  organization?: string;
+  position?: string;
+  category?: string;
   dates?: string;
   summary?: string;
   featured?: boolean;
+}
+
+export interface EducationMeta extends ContentMeta {
+  title: string;
+  period?: string;
+  degree?: string;
+  gpa?: string;
+  logo?: string;
+  transcript?: string;
+}
+
+export interface AwardMeta extends ContentMeta {
+  title: string;
+  category?: string;
+  organization?: string;
+  date?: string;
+}
+
+export interface CvMeta extends ContentMeta {
+  title: string;
+  embed_url?: string;
+  download?: string;
 }
 
 export interface MaterialMeta extends ContentMeta {
@@ -90,6 +120,7 @@ export interface PostMeta extends ContentMeta {
 export interface NewsMeta extends ContentMeta {
   title?: string;
   date: string;
+  display_date?: string;
   tags?: string[];
   published?: boolean;
 }

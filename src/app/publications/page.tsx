@@ -22,7 +22,7 @@ export default function PublicationsPage() {
   const description = page.description ?? "Research publications and preprints.";
 
   return (
-    <main className="academic-page">
+    <main className="main-content">
       <h1>{title}</h1>
       <p className="page-description">{description}</p>
       <PublicationsView publications={getPublications()} />
