@@ -15,6 +15,7 @@ export interface Publication {
   url?: string;
   doi?: string;
   code?: string;
+  dataset?: string;
   pdf?: string;
   poster?: string;
   slides?: string;

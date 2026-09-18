@@ -30,15 +30,16 @@ export default function PublicationsView({ publications }: { publications: Publi
           <p className="authors">{publication.authors.map((author, index) => <span key={author.name}>{index > 0 ? ", " : ""}<span className={author.highlighted ? "author-highlight" : undefined}>{author.name}{author.equalContribution ? "*" : ""}</span></span>)}</p>
           <p className="publication-date">{publication.year}</p>
           {publication.description && <p className="publication-abstract-short">{publication.description}</p>}
-          <div className="buttons">
-            {publication.url && <a href={publication.url} target="_blank" rel="noreferrer">ArXiv / Paper</a>}
-            {publication.doi && <a href={`https://doi.org/${publication.doi}`} target="_blank" rel="noreferrer">DOI</a>}
-            {publication.code && <a href={publication.code} target="_blank" rel="noreferrer">Code</a>}
-            {publication.pdf && <a href={publicationAsset(publication, "pdf")} target="_blank" rel="noreferrer">PDF</a>}
-            {publication.poster && <a href={publicationAsset(publication, "poster")} target="_blank" rel="noreferrer">Poster</a>}
-            {publication.slides && <a href={publicationAsset(publication, "slides")} target="_blank" rel="noreferrer">Slides</a>}
-            {publication.abstract && <details><summary>Abstract</summary><p>{publication.abstract}</p></details>}
-            <details><summary>BibTeX</summary><pre>{publication.bibtex}</pre></details>
+          <div className="buttons" aria-label="Publication resources">
+            <details className="publication-action"><summary>BibTeX</summary><pre>{publication.bibtex}</pre></details>
+            {publication.abstract ? <details className="publication-action"><summary>Abstract</summary><p>{publication.abstract}</p></details> : <button className="publication-action" type="button" disabled>Abstract</button>}
+            {publication.pdf ? <a className="publication-action" href={publicationAsset(publication, "pdf")} target="_blank" rel="noreferrer">PDF</a> : <button className="publication-action" type="button" disabled>PDF</button>}
+            {publication.code ? <a className="publication-action" href={publication.code} target="_blank" rel="noreferrer">Code</a> : <button className="publication-action" type="button" disabled>Code</button>}
+            {publication.dataset ? <a className="publication-action" href={publicationAsset(publication, "dataset")} target="_blank" rel="noreferrer">Dataset</a> : <button className="publication-action" type="button" disabled>Dataset</button>}
+            {publication.url && <a className="publication-action" href={publication.url} target="_blank" rel="noreferrer">ArXiv / Paper</a>}
+            {publication.doi && <a className="publication-action" href={`https://doi.org/${publication.doi}`} target="_blank" rel="noreferrer">DOI</a>}
+            {publication.poster && <a className="publication-action" href={publicationAsset(publication, "poster")} target="_blank" rel="noreferrer">Poster</a>}
+            {publication.slides && <a className="publication-action" href={publicationAsset(publication, "slides")} target="_blank" rel="noreferrer">Slides</a>}
           </div>
         </div>
       </article>) : <p className="empty-state">No publications match the current filters.</p>}

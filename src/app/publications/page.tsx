@@ -23,9 +23,10 @@ export default function PublicationsPage() {
 
   return (
     <main className="main-content">
-      <h1>{title}</h1>
-      <p className="page-description">{description}</p>
-      <PublicationsView publications={getPublications()} />
+      <div className="page-heading">
+        <div className="page-heading-copy"><h1>{title}</h1><p className="page-description">{description}</p></div>
+        <PublicationsView publications={getPublications()} />
+      </div>
     </main>
   );
 }

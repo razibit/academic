@@ -47,6 +47,7 @@ export function getPublications(): Publication[] {
       url: clean(tags.url),
       doi: clean(tags.doi),
       code: clean(tags.code),
+      dataset: clean(tags.dataset),
       pdf: clean(tags.pdf),
       poster: clean(tags.poster),
       slides: clean(tags.slides),
@@ -60,6 +61,6 @@ export function getPublications(): Publication[] {
 }
 
 function reconstructBibtex(entry: { entryType: string; citationKey: string; entryTags: Record<string, string> }): string {
-  const lines = Object.entries(entry.entryTags).filter(([key]) => !["selected", "preview", "description", "code", "pdf", "poster", "slides"].includes(key.toLowerCase())).map(([key, value]) => `  ${key} = {${value}}`);
+  const lines = Object.entries(entry.entryTags).filter(([key]) => !["selected", "preview", "description", "code", "dataset", "pdf", "poster", "slides"].includes(key.toLowerCase())).map(([key, value]) => `  ${key} = {${value}}`);
   return `@${entry.entryType}{${entry.citationKey},\n${lines.join(",\n")}\n}`;
 }
